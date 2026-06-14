@@ -6,14 +6,6 @@ on:
   pull_request:
     branches: [ "master" ]
 
-name: Build Application
-
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
 jobs:
   build:
     name: Build application
