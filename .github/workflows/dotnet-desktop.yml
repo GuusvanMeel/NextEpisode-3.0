@@ -17,11 +17,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    - name: Show solution and project files
-      shell: powershell
-      run: |
-        Get-ChildItem -Force
-        Get-ChildItem -Recurse -Include *.sln,*.slnx,*.csproj -File | Select-Object FullName
+    
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -34,7 +30,7 @@ jobs:
     - name: Restore
       run: dotnet restore
     - name: Check code formatting
-      run: dotnet format "Next Episode 3.0.sln" --verify-no-changes --no-restore
+      run: dotnet format "Next Episode 3.0.slnx" --verify-no-changes --no-restore
 
     - name: Build
       run: dotnet build --configuration Release --no-restore -p:Platform=x64
