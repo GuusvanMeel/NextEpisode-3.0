@@ -17,8 +17,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    - name: Show files
-      run: dir
+    - name: Show solution and project files
+      shell: powershell
+      run: |
+        Get-ChildItem -Force
+        Get-ChildItem -Recurse -Include *.sln,*.slnx,*.csproj -File | Select-Object FullName
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
