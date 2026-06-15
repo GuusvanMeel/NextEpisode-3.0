@@ -30,6 +30,15 @@ jobs:
       run: dotnet build --configuration Release --no-restore -p:Platform=x64
       
   SonarQube:
+    name: SonarQube
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  build:
     name: Build and analyze
     runs-on: windows-latest
     steps:
