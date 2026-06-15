@@ -73,4 +73,4 @@ jobs:
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"GuusvanMeel_NextEpisode-3.0" /o:"guusvanmeel" /d:sonar.token="$SONAR_TOKEN"
           dotnet build
-          ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="$secrets.SONAR_TOKEN"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="$SONAR_TOKEN"
