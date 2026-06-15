@@ -25,6 +25,8 @@ jobs:
 
     - name: Restore
       run: dotnet restore
+    - name: Check code formatting
+      run: dotnet format --verify-no-changes --no-restore
 
     - name: Build
       run: dotnet build --configuration Release --no-restore -p:Platform=x64
